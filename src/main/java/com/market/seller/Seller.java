@@ -13,8 +13,8 @@ public class Seller {
     private String email;
     private String firstName;
     private String lastName;
-    private LocalDate dob;
     private Integer contactNumber;
+    private LocalDate dob;
 
     public Seller() {
     }
@@ -24,8 +24,8 @@ public class Seller {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.dob = dob;
         this.contactNumber = contactNumber;
+        this.dob = dob;
     }
 
     public Seller(String email, String firstName, String lastName, LocalDate dob, Integer contactNumber) {
@@ -73,7 +73,7 @@ public class Seller {
     }
 
     public void setDob(LocalDate dob) {
-        this.dob = dob;
+       this.dob = dob;
     }
 
     public Integer getContactNumber() {
