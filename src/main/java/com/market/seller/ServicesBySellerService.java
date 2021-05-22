@@ -18,7 +18,6 @@ public class ServicesBySellerService {
         this.servicesBySellerRepository = servicesBySellerRepository;
     }
 
-
     public void deleteService(Long servicesBySellerId) {
 
         boolean exists= servicesBySellerRepository.existsById(servicesBySellerId);
