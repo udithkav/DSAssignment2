@@ -23,8 +23,8 @@ public class Order {
     )
 
     private Long id;
-    private Buyer email;
-    private ServicesBySeller serviceName;
+    private Long buyerId;
+    private Long serviceId;
     private LocalDate orderDate;
     private LocalDate deliveryDate;
 
@@ -32,20 +32,21 @@ public class Order {
 
     }
 
-    public Order(Long id, Buyer email, ServicesBySeller serviceName, LocalDate orderDate, LocalDate deliveryDate) {
+    public Order(Long id, Long buyerId, Long serviceId, LocalDate orderDate, LocalDate deliveryDate) {
         this.id = id;
-        this.email = email;
-        this.serviceName = serviceName;
+        this.buyerId = buyerId;
+        this.serviceId = serviceId;
         this.orderDate = orderDate;
         this.deliveryDate = deliveryDate;
     }
 
-    public Order(Buyer email, ServicesBySeller serviceName, LocalDate orderDate, LocalDate deliveryDate) {
-        this.email = email;
-        this.serviceName = serviceName;
+    public Order(Long buyerId, Long serviceId, LocalDate orderDate, LocalDate deliveryDate) {
+        this.buyerId = buyerId;
+        this.serviceId = serviceId;
         this.orderDate = orderDate;
         this.deliveryDate = deliveryDate;
     }
+
 
     public Long getId() {
         return id;
@@ -55,20 +56,20 @@ public class Order {
         this.id = id;
     }
 
-    public Buyer getEmail() {
-        return email;
+    public Long getBuyerId() {
+        return buyerId;
     }
 
-    public void setEmail(Buyer email) {
-        this.email = email;
+    public void setBuyerId(Long buyerId) {
+        this.buyerId = buyerId;
     }
 
-    public ServicesBySeller getServiceName() {
-        return serviceName;
+    public Long getServiceId() {
+        return serviceId;
     }
 
-    public void setServiceName(ServicesBySeller serviceName) {
-        this.serviceName = serviceName;
+    public void setServiceId(Long serviceId) {
+        this.serviceId = serviceId;
     }
 
     public LocalDate getOrderDate() {
@@ -91,8 +92,8 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", email=" + email +
-                ", serviceName=" + serviceName +
+                ", buyerId=" + buyerId +
+                ", serviceId=" + serviceId +
                 ", orderDate=" + orderDate +
                 ", deliveryDate=" + deliveryDate +
                 '}';
