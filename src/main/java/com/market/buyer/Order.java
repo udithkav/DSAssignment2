@@ -1,9 +1,11 @@
 package com.market.buyer;
 
-import com.market.seller.Seller;
+
+import com.market.seller.ServicesBySeller;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Entity
 @Table
@@ -21,20 +23,28 @@ public class Order {
     )
 
     private Long id;
-    private Buyer buyer;
-    private Seller seller;
-    private Date orderDate;
-    private Date deliveryDate;
+    private Buyer email;
+    private ServicesBySeller serviceName;
+    private LocalDate orderDate;
+    private LocalDate deliveryDate;
 
     public Order(){
 
     }
 
-    public Order(Long id, Buyer buyer, Seller seller, Date orderDate) {
+    public Order(Long id, Buyer email, ServicesBySeller serviceName, LocalDate orderDate, LocalDate deliveryDate) {
         this.id = id;
-        this.buyer = buyer;
-        this.seller = seller;
+        this.email = email;
+        this.serviceName = serviceName;
         this.orderDate = orderDate;
+        this.deliveryDate = deliveryDate;
+    }
+
+    public Order(Buyer email, ServicesBySeller serviceName, LocalDate orderDate, LocalDate deliveryDate) {
+        this.email = email;
+        this.serviceName = serviceName;
+        this.orderDate = orderDate;
+        this.deliveryDate = deliveryDate;
     }
 
     public Long getId() {
@@ -45,35 +55,35 @@ public class Order {
         this.id = id;
     }
 
-    public Buyer getBuyer() {
-        return buyer;
+    public Buyer getEmail() {
+        return email;
     }
 
-    public void setBuyer(Buyer buyer) {
-        this.buyer = buyer;
+    public void setEmail(Buyer email) {
+        this.email = email;
     }
 
-    public Seller getSeller() {
-        return seller;
+    public ServicesBySeller getServiceName() {
+        return serviceName;
     }
 
-    public void setSeller(Seller seller) {
-        this.seller = seller;
+    public void setServiceName(ServicesBySeller serviceName) {
+        this.serviceName = serviceName;
     }
 
-    public Date getOrderDate() {
+    public LocalDate getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(Date orderDate) {
+    public void setOrderDate(LocalDate orderDate) {
         this.orderDate = orderDate;
     }
 
-    public Date getDeliveryDate() {
+    public LocalDate getDeliveryDate() {
         return deliveryDate;
     }
 
-    public void setDeliveryDate(Date deliveryDate) {
+    public void setDeliveryDate(LocalDate deliveryDate) {
         this.deliveryDate = deliveryDate;
     }
 
@@ -81,8 +91,8 @@ public class Order {
     public String toString() {
         return "Order{" +
                 "id=" + id +
-                ", buyer=" + buyer +
-                ", seller=" + seller +
+                ", email=" + email +
+                ", serviceName=" + serviceName +
                 ", orderDate=" + orderDate +
                 ", deliveryDate=" + deliveryDate +
                 '}';
