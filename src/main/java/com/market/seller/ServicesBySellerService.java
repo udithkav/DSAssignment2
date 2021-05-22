@@ -33,6 +33,7 @@ public class ServicesBySellerService {
         if (keyword != null) {
             return servicesBySellerRepository.search(keyword);
         }
+
         return servicesBySellerRepository.findAll();
     }
 }
