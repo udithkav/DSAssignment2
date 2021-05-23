@@ -12,7 +12,4 @@ public interface BuyerRepository extends JpaRepository<Buyer,Long> {
     @Query("SELECT b FROM Buyer b WHERE b.email=?1 ")
     Optional<Buyer> findCustomerByEmail(String email);
 
-    @Query("SELECT b.email FROM Buyer b WHERE b.id=?1")
-    String findCustomerEmailById(Long id);
-
 }

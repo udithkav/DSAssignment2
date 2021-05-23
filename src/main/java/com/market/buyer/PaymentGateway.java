@@ -18,18 +18,20 @@ public class PaymentGateway {
     )
 
     private Long id;
-    private long buyerId;
-    private long serviceId;
+    private long creditCardNum;
     private double amount;
+    private long cvcNumber;
+    private String cardHolderName;
 
     public PaymentGateway() {
 
     }
 
-    public PaymentGateway(long buyerId, long serviceId, double amount) {
-        this.buyerId = buyerId;
-        this.serviceId = serviceId;
+    public PaymentGateway(long creditCardNum, double amount, long cvcNumber, String cardHolderName) {
+        this.creditCardNum = creditCardNum;
         this.amount = amount;
+        this.cvcNumber = cvcNumber;
+        this.cardHolderName = cardHolderName;
     }
 
     public Long getId() {
@@ -40,20 +42,12 @@ public class PaymentGateway {
         this.id = id;
     }
 
-    public long getBuyerId() {
-        return buyerId;
+    public long getCreditCardNum() {
+        return creditCardNum;
     }
 
-    public void setBuyerId(long buyerId) {
-        this.buyerId = buyerId;
-    }
-
-    public long getServiceId() {
-        return serviceId;
-    }
-
-    public void setServiceId(long serviceId) {
-        this.serviceId = serviceId;
+    public void setCreditCardNum(long creditCardNum) {
+        this.creditCardNum = creditCardNum;
     }
 
     public double getAmount() {
@@ -64,15 +58,30 @@ public class PaymentGateway {
         this.amount = amount;
     }
 
+    public long getCvcNumber() {
+        return cvcNumber;
+    }
+
+    public void setCvcNumber(long cvcNumber) {
+        this.cvcNumber = cvcNumber;
+    }
+
+    public String getCardHolderName() {
+        return cardHolderName;
+    }
+
+    public void setCardHolderName(String cardHolderName) {
+        this.cardHolderName = cardHolderName;
+    }
+
     @Override
     public String toString() {
         return "PaymentGateway{" +
                 "id=" + id +
-                ", buyerId=" + buyerId +
-                ", serviceId=" + serviceId +
+                ", creditCardNum=" + creditCardNum +
                 ", amount=" + amount +
+                ", cvcNumber=" + cvcNumber +
+                ", cardHolderName='" + cardHolderName + '\'' +
                 '}';
     }
-
-
 }
